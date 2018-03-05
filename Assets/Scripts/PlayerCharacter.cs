@@ -24,7 +24,7 @@ public class PlayerCharacter : MonoBehaviour {
     void FixedUpdate() {
         grounded = false;
 
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(groundArea.position, new Vector2(0.28f, 0.1f), 0f, groundLayer);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(groundArea.position, new Vector2(0.295f, 0.1f), 0f, groundLayer);
         for (int i = 0; i < colliders.Length; i++) {
             if (colliders[i].gameObject != gameObject)
                 grounded = true;
