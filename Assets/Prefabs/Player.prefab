@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 50482702029972764}
   - component: {fileID: 114875880405757240}
   - component: {fileID: 114369883587343368}
-  - component: {fileID: 70714082937507030}
+  - component: {fileID: 61515337894411408}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -71,8 +71,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845311655417574}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.26, y: -4.71, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.371724, y: -5.33436, z: -2.0771666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4675809459686386}
@@ -87,8 +87,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1654310282505984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -1.6, z: 1.0386798}
-  m_LocalScale: {x: 6.6749406, y: 6.6749454, z: 6.6749454}
+  m_LocalPosition: {x: 0, y: -1.6, z: 1.0386798}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4061211799428166}
   m_RootOrder: 0
@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672481586262222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13, y: 0.25, z: -9.820691}
+  m_LocalPosition: {x: -0.04, y: 0.62, z: -9.820691}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4061211799428166}
@@ -115,7 +115,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.6901961, g: 0.6901961, b: 0.6901961, a: 1}
+  m_BackGroundColor: {r: 0.49264705, g: 0.49264705, b: 0.49264705, a: 0.422}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -126,7 +126,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 13.043743
+  orthographic size: 9.447203
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -162,8 +162,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &70714082937507030
-CapsuleCollider2D:
+--- !u!61 &61515337894411408
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -174,9 +174,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.034642458, y: -0.19529748}
-  m_Size: {x: 0.56347847, y: 2.8354397}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.22438979}
+  m_SpriteTilingProperty:
+    border: {x: 0.83, y: 0, z: 0, w: 0}
+    pivot: {x: 0.7179542, y: 0.5}
+    oldSize: {x: 1.99, y: 3.26}
+    newSize: {x: 12, y: 18.02}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3051322, y: 2.8112202}
+  m_EdgeRadius: 0
 --- !u!81 &81057806204346608
 AudioListener:
   m_ObjectHideFlags: 1
@@ -225,7 +235,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 12
   jumpPower: 1000
-  airControl: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 256

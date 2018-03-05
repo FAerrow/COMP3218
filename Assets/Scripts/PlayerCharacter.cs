@@ -6,7 +6,6 @@ public class PlayerCharacter : MonoBehaviour {
 
     public float maxSpeed;
     public float jumpPower;
-    public bool airControl;
     public LayerMask groundLayer;
 
     private Rigidbody2D rBody2D;
@@ -15,12 +14,12 @@ public class PlayerCharacter : MonoBehaviour {
     private bool faceLeft = false;
     private Animator animator;
 
-    // Use this for initialization
-    void Awake() {
+	// Use this for initialization
+	void Awake() {
         rBody2D = GetComponent<Rigidbody2D>();
         groundArea = transform.Find("GroundArea");
         animator = GetComponent<Animator>();
-    }
+	}
 
     void FixedUpdate() {
         grounded = false;
@@ -48,17 +47,14 @@ public class PlayerCharacter : MonoBehaviour {
 
     public void Move(float moveHorizontal, bool jump) {
 
-        if (grounded) {
+        if (animator) animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
 
-            if (animator) animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
+        rBody2D.velocity = new Vector2(moveHorizontal * maxSpeed, rBody2D.velocity.y);
 
-            rBody2D.velocity = new Vector2(moveHorizontal * maxSpeed, rBody2D.velocity.y);
-
-            if (moveHorizontal > 0 && faceLeft) {
-                Flip();
-            } else if (moveHorizontal < 0 && !faceLeft) {
-                Flip();
-            }
+        if (moveHorizontal > 0 && faceLeft) {
+            Flip();
+        } else if (moveHorizontal < 0 && !faceLeft) {
+            Flip();
         }
 
         if (grounded && jump) {
