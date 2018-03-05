@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerCharacter))]
 public class PlayerController : MonoBehaviour {
@@ -16,6 +17,11 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		if (!jump) {
             jump = Input.GetButtonDown("Jump");
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 	}
 
