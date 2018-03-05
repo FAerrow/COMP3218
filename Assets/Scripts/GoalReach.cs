@@ -1,34 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalReach : MonoBehaviour {
 
-    public TagType tag;
-    private string type;
-
-    private void Start() {
-        SetTag();
-    }
+    public int level;
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == type) {
-            Destroy(this.gameObject);
+        if (collision.tag == "Player") {
+            SceneManager.LoadScene("LVL" + level.ToString());
         }
-    }
-
-    private void SetTag() {
-        switch (tag) {
-            case TagType.Player:
-                type = "Player";
-                break;
-            case TagType.Fish:
-                type = "Fish";
-                break;
-        }
-    }
-
-    public enum TagType {
-        Player, Fish
     }
 }
